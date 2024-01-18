@@ -26,7 +26,7 @@ const SocialLinks = () => {
     <div className="absolute bottom-[4vh] left-[2vw] flex flex-col gap-2">
       {socialLinks.map((link, index) => (
         <div
-          className="hover:animate-wiggle rounded-full p-2"
+          className="cursor-pointer rounded-full p-2 hover:animate-wiggle"
           style={{ backgroundColor: link.color }}
           key={index}
         >
