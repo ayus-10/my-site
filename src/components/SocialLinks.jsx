@@ -23,7 +23,7 @@ const SocialLinks = () => {
   ];
 
   return (
-    <div className="absolute bottom-[4vh] left-[2vw] flex flex-col gap-2">
+    <div className="absolute bottom-[4vh] left-[2vw] flex gap-2 md:flex-col">
       {socialLinks.map((link, index) => (
         <div
           className="cursor-pointer rounded-full p-2 hover:animate-wiggle"

@@ -5,7 +5,7 @@ const Navbar = () => {
   const navLinks = ["skills", "projects", "contact"];
 
   return (
-    <nav className="flex w-screen justify-center bg-gray-100 px-4 py-2 font-light">
+    <nav className="relative z-50 flex max-h-[3.25rem] w-screen justify-center bg-gray-100 px-4 py-2 font-light">
       <ul className="flex w-full justify-between px-4 sm:text-lg md:w-auto md:justify-center md:gap-8 md:px-0 md:text-xl">
         {navLinks.map((link, index) => (
           <li key={index} className="group">
