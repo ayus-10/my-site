@@ -2,15 +2,17 @@ import React from "react";
 import image from "../assets/my-image.jpg";
 import SocialLinks from "./SocialLinks";
 
-const Hero = () => {
+const Hero = ({ darkTheme }) => {
   return (
     <div
-      className="relative flex max-h-screen w-screen flex-grow bg-gray-200 px-4"
+      className={`relative flex max-h-screen w-screen flex-grow px-4 ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
       id="hero"
     >
       <div className="-mt-[3.25rem] flex flex-col-reverse justify-center gap-4 md:flex-row md:items-center md:gap-8">
         <div className="w-full text-center md:w-1/2 md:text-right">
-          <h2 className="text-2xl font-semibold text-purple-950 md:text-3xl">
+          <h2
+            className={`text-2xl font-semibold md:text-3xl ${darkTheme ? "text-purple-400 " : "text-purple-900 "}`}
+          >
             Hey, there!
           </h2>
           <h1 className="text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">

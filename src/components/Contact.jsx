@@ -1,8 +1,11 @@
 import React from "react";
 
-const Contact = () => {
+const Contact = ({ darkTheme }) => {
   return (
-    <div className="min-h-screen w-screen bg-gray-200" id="contact">
+    <div
+      className={`min-h-screen w-screen ${darkTheme ? "bg-gray-900" : "bg-gray-100"}`}
+      id="contact"
+    >
       Contact
     </div>
   );

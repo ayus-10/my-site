@@ -18,16 +18,22 @@ const App = () => {
     setShowScrollUp(!inView);
   }, [inView]);
 
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  const changeTheme = () => setDarkTheme(!darkTheme);
+
   return (
-    <div className="min-h-screen overflow-hidden text-gray-900">
+    <div
+      className={`min-h-screen overflow-hidden ${darkTheme ? "text-white" : "text-gray-900"}`}
+    >
       <div className="flex min-h-screen flex-col" id="home" ref={homeComponent}>
-        <Navbar />
-        <Hero />
+        <Navbar changeTheme={changeTheme} darkTheme={darkTheme} />
+        <Hero darkTheme={darkTheme} />
         <ScrollTop setVisibility={showScrollUp} />
       </div>
-      <Skills />
-      <Projects />
-      <Contact />
+      <Skills darkTheme={darkTheme} />
+      <Projects darkTheme={darkTheme} />
+      <Contact darkTheme={darkTheme} />
     </div>
   );
 };

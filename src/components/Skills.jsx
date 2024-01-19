@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { skillItems } from "../data/SkillItems.jsx";
 
-const Skills = () => {
+const Skills = ({ darkTheme }) => {
   const itemsRef = useRef();
 
   const handleHover = (id, color) => {
@@ -16,9 +16,14 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-100" id="skills">
+    <div
+      className={`min-h-screen w-screen ${darkTheme ? "bg-gray-900" : "bg-gray-100"}`}
+      id="skills"
+    >
       <div className="px-4 py-12">
-        <h1 className="text-center text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">
+        <h1
+          className={`text-center text-3xl font-bold md:my-2 md:text-5xl ${darkTheme ? "text-purple-500" : "text-purple-600"}`}
+        >
           Which tools can I work with?
         </h1>
         <div
@@ -31,7 +36,7 @@ const Skills = () => {
               <div
                 id={id}
                 key={index}
-                className="flex flex-col items-center justify-center text-gray-500"
+                className={`flex flex-col items-center justify-center ${darkTheme ? "text-gray-300" : "text-gray-500"}`}
                 onMouseOver={() => handleHover(id, item.color)}
                 onMouseOut={() => handleHover(id, null)}
               >
