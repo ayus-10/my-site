@@ -8,17 +8,17 @@ const SocialLinks = () => {
     {
       url: "https://github.com/ayus-10",
       icon: <TbBrandGithubFilled />,
-      color: "#171515",
+      color: "#333",
     },
     {
       url: "https://www.linkedin.com/in/aayush-upreti-a21945293/",
       icon: <LiaLinkedinIn />,
-      color: "#0072b1",
+      color: "#0a66c2",
     },
     {
       url: "mailto:contact@aayushupreti.com.np",
       icon: <SiMinutemailer />,
-      color: "#db4437",
+      color: "#ea4335",
     },
   ];
 
