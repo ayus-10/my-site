@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, darkTheme }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const imageRef = useRef();
@@ -22,10 +22,10 @@ const Carousel = ({ images }) => {
   }, [imageIndex]);
 
   return (
-    <div className="relative h-full w-full rounded-lg">
+    <div className="relative h-full w-full rounded-t-lg">
       <img
         src={`${images[imageIndex]}`}
-        className="rounded-lg"
+        className={`rounded-t-lg border-b-2 border-dashed ${darkTheme ? "border-purple-500" : "border-purple-600"}`}
         ref={imageRef}
         onAnimationEnd={() => {
           imageRef.current.classList.remove("animate-fadeIn");
@@ -36,7 +36,7 @@ const Carousel = ({ images }) => {
           return (
             <div
               key={index}
-              className={`relative h-4 w-4 cursor-pointer rounded-full duration-500 ease-in-out ${index === imageIndex ? "bg-white" : "bg-gray-500"}`}
+              className={`relative h-3 w-3 cursor-pointer rounded-full duration-500 ease-in-out ${index === imageIndex ? "bg-purple-600" : "bg-white"}`}
               onClick={() => {
                 setImageIndex(index);
               }}
