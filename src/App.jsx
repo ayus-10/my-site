@@ -8,6 +8,7 @@ import ScrollTop from "./components/ScrollTop";
 import { useInView } from "react-intersection-observer";
 
 const App = () => {
+  // If homeComponent covers 100% of the screen, inView is true
   const { ref: homeComponent, inView } = useInView({
     threshold: 1,
   });
@@ -15,12 +16,27 @@ const App = () => {
   const [showScrollUp, setShowScrollUp] = useState(false);
 
   useEffect(() => {
+    // Used to conditionally show/hide the ScrollTop component
     setShowScrollUp(!inView);
   }, [inView]);
 
   const [darkTheme, setDarkTheme] = useState(false);
 
-  const changeTheme = () => setDarkTheme(!darkTheme);
+  useEffect(() => {
+    // On initial page load, get previous darkTheme state
+    let dark_theme = JSON.parse(localStorage.getItem("dark_theme"));
+    if (dark_theme) {
+      // Set previous state if its not null
+      setDarkTheme(dark_theme);
+    }
+  }, []);
+
+  const changeTheme = () => {
+    // Toggle dark theme state
+    setDarkTheme(!darkTheme);
+    // Saving !darkTheme because the state will only be updated on next re-render
+    localStorage.setItem("dark_theme", JSON.stringify(!darkTheme));
+  };
 
   return (
     <div
