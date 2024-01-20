@@ -12,9 +12,10 @@ const Projects = ({ darkTheme }) => {
           Some of my select works!
         </h1>
       </div>
-      <div className="flex flex-col items-center justify-evenly gap-4 pb-24 md:flex-row">
-        {Array.from({ length: 3 }).map(() => (
+      <div className="flex flex-col items-center gap-4 px-8 pb-24 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
+        {Array.from({ length: 3 }).map((_, index) => (
           <ProjectBox
+            key={index}
             darkTheme={darkTheme}
             title={"Hello, world!"}
             description={
@@ -25,6 +26,7 @@ const Projects = ({ darkTheme }) => {
               "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=720&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlfHx8fHx8MTcwNTczNDI3OQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1280",
               "https://images.unsplash.com/photo-1533119408463-b0f487583ff6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=720&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlfHx8fHx8MTcwNTczNDI4MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1280",
             ]}
+            links={{ code: "https://google.com", demo: "https://youtube.com" }}
           />
         ))}
       </div>

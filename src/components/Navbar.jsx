@@ -11,7 +11,7 @@ const Navbar = ({ changeTheme, darkTheme }) => {
       className={`relative z-10 flex h-[3.25rem] w-screen justify-center px-4 py-2 font-light ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
     >
       <button
-        className="absolute left-1 top-[3.5rem] z-20 flex rounded-full bg-purple-600 p-2 text-3xl text-white outline-none md:top-1/2 md:-translate-y-1/2"
+        className="absolute left-1 top-[3.5rem] flex rounded-full bg-purple-600 p-2 text-3xl text-white outline-none md:top-1/2 md:-translate-y-1/2"
         onClick={changeTheme}
       >
         {darkTheme ? <IoIosSunny /> : <IoMoon />}
