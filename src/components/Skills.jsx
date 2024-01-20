@@ -17,13 +17,11 @@ const Skills = ({ darkTheme }) => {
 
   return (
     <div
-      className={`min-h-screen w-screen ${darkTheme ? "bg-gray-900" : "bg-gray-100"}`}
+      className={`min-h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
       id="skills"
     >
       <div className="px-4 py-12">
-        <h1
-          className={`text-center text-3xl font-bold md:my-2 md:text-5xl ${darkTheme ? "text-purple-500" : "text-purple-600"}`}
-        >
+        <h1 className="text-center text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">
           Which tools can I work with?
         </h1>
         <div

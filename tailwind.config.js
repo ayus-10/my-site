@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        "gray-850": "#18202f",
+      },
       keyframes: {
         shake: {
           "0%": { transform: "translateY(0)" },
