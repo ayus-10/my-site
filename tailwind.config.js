@@ -9,7 +9,7 @@ export default {
       keyframes: {
         shake: {
           "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-5px)" },
+          "50%": { transform: "translateY(-15px)" },
           "100%": { transform: "translateY(0)" },
         },
         wiggle: {
@@ -41,7 +41,7 @@ export default {
         },
       },
       animation: {
-        shake: "shake 0.5s ease-in-out infinite",
+        shake: "shake 1s ease-in-out infinite",
         fadeIn: "fadeIn 1s forwards",
         fadeOut: "fadeOut 0.5s forwards",
         wiggle: "wiggle 1s linear infinite",

@@ -36,7 +36,7 @@ const Carousel = ({ images, darkTheme }) => {
           return (
             <div
               key={index}
-              className={`relative h-3 w-3 cursor-pointer rounded-full duration-500 ease-in-out ${index === imageIndex ? "bg-purple-600" : "bg-white"}`}
+              className={`relative h-3 w-3 cursor-pointer rounded-full duration-500 ease-in-out ${index === imageIndex ? "bg-purple-600" : "bg-gray-500"}`}
               onClick={() => {
                 setImageIndex(index);
               }}

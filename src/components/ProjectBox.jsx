@@ -19,7 +19,7 @@ const ProjectBox = ({ darkTheme, title, description, images, links }) => {
       <h1 className="px-4 pt-4 text-xl font-bold text-purple-600 md:text-2xl">
         {title}
       </h1>
-      <p className="px-4 pb-6 pt-4 md:text-lg">{description}</p>
+      <p className="px-4 pb-6 pt-2 md:text-lg">{description}</p>
       <button
         className="group peer flex items-center px-4 pb-4 font-bold text-purple-600 hover:underline md:text-lg"
         onClick={toggleShowLinks}
