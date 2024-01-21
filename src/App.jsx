@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ScrollTop from "./components/ScrollTop";
 import { useInView } from "react-intersection-observer";
+import Footer from "./components/Footer";
 
 const App = () => {
   // If homeComponent covers 100% of the screen, inView is true
@@ -50,6 +51,7 @@ const App = () => {
       <Skills darkTheme={darkTheme} />
       <Projects darkTheme={darkTheme} />
       <Contact darkTheme={darkTheme} />
+      <Footer darkTheme={darkTheme} />
     </div>
   );
 };
