@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { CgHello } from "react-icons/cg";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Contact = ({ darkTheme }) => {
+  const API_URL = "https://send-form-data-to-my-email.onrender.com/submit";
+
+  const [loading, setLoading] = useState(false);
+
   const handleForm = (event) => {
     event.preventDefault();
 
@@ -13,10 +19,23 @@ const Contact = ({ darkTheme }) => {
     const messageInput = formElement.querySelector("#userMessage");
     const message = messageInput.value;
 
-    const data = {
+    const formData = {
       email: email,
       message: message,
     };
+
+    setLoading(true);
+
+    axios
+      .post(API_URL, formData)
+      .then((response) => {
+        setLoading(false);
+        alert(response.data);
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert(error.code);
+      });
   };
 
   return (
@@ -34,14 +53,16 @@ const Contact = ({ darkTheme }) => {
             className="flex w-full flex-col md:w-2/3 lg:grid lg:grid-cols-2"
           >
             <div className="flex flex-col items-center justify-center gap-2 rounded-tl-lg rounded-tr-lg bg-purple-600 py-2 lg:rounded-bl-lg lg:rounded-tr-none">
-              <CgHello className="text-8xl text-gray-100 md:text-9xl" />
-              <h1 className="font-pacifico text-3xl text-gray-100 md:text-4xl">
+              <CgHello className="text-8xl text-white md:text-9xl" />
+              <h1 className="font-pacifico text-3xl text-white md:text-4xl">
                 let's have a chat
               </h1>
             </div>
-            <div className="flex flex-col gap-4 rounded-bl-lg rounded-br-lg bg-gray-200 px-4 py-6 text-lg md:text-xl lg:rounded-bl-none lg:rounded-tr-lg">
+            <div
+              className={`flex flex-col gap-4 rounded-bl-lg rounded-br-lg px-4 py-6 text-lg md:text-xl lg:rounded-bl-none lg:rounded-tr-lg ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
+            >
               <input
-                className="rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2"
+                className={`rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2 ${darkTheme ? "bg-gray-850" : "bg-white"}`}
                 type="text"
                 id="userEmail"
                 autoComplete="off"
@@ -49,7 +70,7 @@ const Contact = ({ darkTheme }) => {
                 required
               />
               <textarea
-                className="h-24 resize-none rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2 md:h-40"
+                className={`h-24 resize-none rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2 md:h-40 ${darkTheme ? "bg-gray-850" : "bg-white"}`}
                 type="text"
                 id="userMessage"
                 autoComplete="off"
@@ -57,7 +78,11 @@ const Contact = ({ darkTheme }) => {
                 required
               ></textarea>
               <button className="rounded-sm bg-purple-600 py-2 font-semibold text-white duration-200 ease-in-out hover:bg-purple-700">
-                Send
+                {loading ? (
+                  <BeatLoader color={"white"} loading={loading} />
+                ) : (
+                  "Send"
+                )}
               </button>
             </div>
           </form>
