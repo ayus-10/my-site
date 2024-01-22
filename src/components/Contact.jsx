@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import { CgHello } from "react-icons/cg";
 import BeatLoader from "react-spinners/BeatLoader";
+import Notification from "./Notification";
 
 const Contact = ({ darkTheme }) => {
   const API_URL = "https://send-form-data-to-my-email.onrender.com/submit";
 
   const [loading, setLoading] = useState(false);
+
+  const [notification, setNotification] = useState({
+    status: null,
+    message: null,
+  });
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -30,19 +36,34 @@ const Contact = ({ darkTheme }) => {
       .post(API_URL, formData)
       .then((response) => {
         setLoading(false);
-        alert(response.data);
+        handleNotification(true, response.data);
       })
       .catch((error) => {
         setLoading(false);
-        alert(error.code);
+        handleNotification(false, error.code);
       });
+  };
+
+  const handleNotification = (status, message) => {
+    setNotification({
+      status: status,
+      message: message,
+    });
   };
 
   return (
     <div
-      className={`h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
+      className={`relative h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
       id="contact"
     >
+      {notification.status !== null ? (
+        <Notification
+          setNotification={setNotification}
+          darkTheme={darkTheme}
+          status={notification.status}
+          message={notification.message}
+        />
+      ) : null}
       <div className="flex h-full flex-col px-4 py-12">
         <h1 className="text-center text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">
           Leave me a message.
