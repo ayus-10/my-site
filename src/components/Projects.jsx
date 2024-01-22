@@ -13,7 +13,7 @@ const Projects = ({ darkTheme }) => {
           Some of my curated works!
         </h1>
       </div>
-      <div className="flex flex-col items-center gap-4 px-8 pb-24 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
+      <div className="flex flex-col items-center gap-4 px-4 pb-24 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
         {projectItems.map((item, index) => (
           <ProjectBox
             key={index}
