@@ -40,6 +40,7 @@ export const skillItems = [
     name: "Express JS",
     image: <SiExpress />,
     color: "#333",
+    altColor: "#fff",
   },
   {
     name: "Mongo DB",

@@ -9,9 +9,9 @@ import { useInView } from "react-intersection-observer";
 import Footer from "./components/Footer";
 
 const App = () => {
-  // If homeComponent covers 100% of the screen, inView is true
-  const { ref: homeComponent, inView } = useInView({
-    threshold: 1,
+  // If heroComponent covers 80% of the screen, inView is true
+  const { ref: heroComponent, inView } = useInView({
+    threshold: 0.8,
   });
 
   const [showScrollUp, setShowScrollUp] = useState(false);
@@ -43,7 +43,7 @@ const App = () => {
     <div
       className={`min-h-screen overflow-hidden ${darkTheme ? "text-white" : "text-gray-900"}`}
     >
-      <div className="flex min-h-screen flex-col" id="home" ref={homeComponent}>
+      <div className="flex min-h-screen flex-col" id="home" ref={heroComponent}>
         <Navbar changeTheme={changeTheme} darkTheme={darkTheme} />
         <Hero darkTheme={darkTheme} />
         <ScrollTop setVisibility={showScrollUp} />

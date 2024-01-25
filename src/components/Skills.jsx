@@ -4,10 +4,16 @@ import { skillItems } from "../data/SkillItems.jsx";
 const Skills = ({ darkTheme }) => {
   const itemsRef = useRef();
 
-  const handleHover = (id, color) => {
+  const handleHover = (id, color, altColor) => {
     const items = itemsRef.current;
     const item = items.querySelector(`#${id}`);
-    item.style.color = color;
+
+    if (darkTheme === true && altColor !== undefined) {
+      item.style.color = altColor;
+    } else {
+      item.style.color = color;
+    }
+
     if (Array.from(item.classList).includes("animate-shake")) {
       item.classList.remove("animate-shake");
     } else {
@@ -35,8 +41,8 @@ const Skills = ({ darkTheme }) => {
                 id={id}
                 key={index}
                 className={`flex flex-col items-center justify-center ${darkTheme ? "text-gray-300" : "text-gray-500"}`}
-                onMouseOver={() => handleHover(id, item.color)}
-                onMouseOut={() => handleHover(id, null)}
+                onMouseOver={() => handleHover(id, item.color, item.altColor)}
+                onMouseOut={() => handleHover(id, null, null)}
               >
                 <div className="text-8xl md:text-9xl">{item.image}</div>
                 <span className="cursor-default text-lg md:text-3xl md:font-bold">
