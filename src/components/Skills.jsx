@@ -40,7 +40,7 @@ const Skills = ({ darkTheme }) => {
               <div
                 id={id}
                 key={index}
-                className={`flex flex-col items-center justify-center ${darkTheme ? "text-gray-300" : "text-gray-500"}`}
+                className={`flex flex-col items-center justify-center ${darkTheme ? "text-gray-400" : "text-gray-500"}`}
                 onMouseOver={() => handleHover(id, item.color, item.altColor)}
                 onMouseOut={() => handleHover(id, null, null)}
               >

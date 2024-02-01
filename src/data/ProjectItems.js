@@ -1,6 +1,6 @@
-import dash1 from "../assets/dash1.png";
-import dash2 from "../assets/dash2.png";
-import dash3 from "../assets/dash3.png";
+import quizzy1 from "../assets/quizzy1.png";
+import quizzy2 from "../assets/quizzy2.png";
+import quizzy3 from "../assets/quizzy3.png";
 import splash1 from "../assets/splash1.png";
 import splash2 from "../assets/splash2.png";
 import splash3 from "../assets/splash3.png";
@@ -10,19 +10,19 @@ import x3 from "../assets/x3.png";
 
 const projectItems = [
   {
-    title: "Landing Page",
+    title: "Quiz App",
     description:
-      "This is a landing page template created using React JS and Tailwind CSS.",
-    images: [dash1, dash2, dash3],
+      "A MERN application that lets users make quizzes and generates an ID and password that other people can use to take the quiz.",
+    images: [quizzy1, quizzy2, quizzy3],
     links: {
-      code: "https://github.com/ayus-10/dash",
-      demo: "https://dash-roan-ten.vercel.app/",
+      code: "https://github.com/ayus-10/quizzy-frontend",
+      demo: "https://quizzy-frontend-flax.vercel.app/",
     },
   },
   {
     title: "Portfolio Page",
     description:
-      "This is a Personal Portfolio webpage template created using React JS.",
+      "A React JS powered personal portfolio template - includes a custom image carousel for showcasing your projects.",
     images: [splash1, splash2, splash3],
     links: {
       code: "https://github.com/ayus-10/splash",
@@ -32,7 +32,7 @@ const projectItems = [
   {
     title: "E-Commerce Site",
     description:
-      "This is an e-commerce website built using React JS and Tailwind CSS.",
+      "A React app that dynamically loads items and provides item browsing, searching, sorting, viewing, and cart management.",
     images: [x1, x2, x3],
     links: {
       code: "https://github.com/ayus-10/project-x",

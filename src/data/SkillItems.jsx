@@ -1,4 +1,5 @@
-import { FaHtml5, FaReact, FaPython } from "react-icons/fa6";
+import { FaReact, FaPython } from "react-icons/fa6";
+import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptFill } from "react-icons/ri";
 import { IoLogoCss3 } from "react-icons/io";
 import { FaGitAlt } from "react-icons/fa";
@@ -6,11 +7,6 @@ import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 
 export const skillItems = [
-  {
-    name: "HTML",
-    image: <FaHtml5 />,
-    color: "#f06529",
-  },
   {
     name: "CSS",
     image: <IoLogoCss3 />,
@@ -20,6 +16,11 @@ export const skillItems = [
     name: "JavaScript",
     image: <RiJavascriptFill />,
     color: "#f7df1e",
+  },
+  {
+    name: "TypeScript",
+    image: <BiLogoTypescript />,
+    color: "#007acc",
   },
   {
     name: "React JS",

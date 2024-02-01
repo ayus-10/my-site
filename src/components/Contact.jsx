@@ -35,12 +35,15 @@ const Contact = ({ darkTheme }) => {
     axios
       .post(API_URL, formData)
       .then((response) => {
-        setLoading(false);
         handleNotification(true, response.data);
       })
       .catch((error) => {
-        setLoading(false);
         handleNotification(false, error.code);
+      })
+      .finally(() => {
+        setLoading(false);
+        emailInput.value = "";
+        messageInput.value = "";
       });
   };
 
@@ -53,22 +56,21 @@ const Contact = ({ darkTheme }) => {
 
   return (
     <div
-      className={`relative h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
+      className={`h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
       id="contact"
     >
-      {notification.status !== null ? (
-        <Notification
-          setNotification={setNotification}
-          darkTheme={darkTheme}
-          status={notification.status}
-          message={notification.message}
-        />
-      ) : null}
       <div className="flex h-full flex-col px-4 py-12">
         <h1 className="text-center text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">
           Leave me a message.
         </h1>
-        <div className="grid flex-grow place-items-center">
+        <div className="relative grid flex-grow place-items-center">
+          {notification.status ? (
+            <Notification
+              setNotification={setNotification}
+              status={notification.status}
+              message={notification.message}
+            />
+          ) : null}
           <form
             onSubmit={handleForm}
             className="flex w-full flex-col md:w-2/3 lg:grid lg:grid-cols-2"
