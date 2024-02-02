@@ -1,12 +1,12 @@
 import quizzy1 from "../assets/quizzy1.png";
 import quizzy2 from "../assets/quizzy2.png";
 import quizzy3 from "../assets/quizzy3.png";
-import splash1 from "../assets/splash1.png";
-import splash2 from "../assets/splash2.png";
-import splash3 from "../assets/splash3.png";
-import x1 from "../assets/x1.png";
-import x2 from "../assets/x2.png";
-import x3 from "../assets/x3.png";
+import splash1 from "../assets/splash1.jpg";
+import splash2 from "../assets/splash2.jpg";
+import splash3 from "../assets/splash3.jpg";
+import x1 from "../assets/x1.jpg";
+import x2 from "../assets/x2.jpg";
+import x3 from "../assets/x3.jpg";
 
 const projectItems = [
   {
