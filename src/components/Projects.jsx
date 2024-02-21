@@ -5,7 +5,7 @@ import projectItems from "../data/ProjectItems";
 const Projects = ({ darkTheme }) => {
   return (
     <div
-      className={`min-h-screen w-screen ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
+      className={`flex min-h-screen w-screen flex-col ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
       id="projects"
     >
       <div className="px-4 py-12">
@@ -13,17 +13,19 @@ const Projects = ({ darkTheme }) => {
           Some of my curated works!
         </h1>
       </div>
-      <div className="flex flex-col items-center gap-4 px-4 pb-24 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
-        {projectItems.map((item, index) => (
-          <ProjectBox
-            key={index}
-            darkTheme={darkTheme}
-            title={item.title}
-            description={item.description}
-            images={item.images}
-            links={item.links}
-          />
-        ))}
+      <div className="flex grow flex-col justify-center">
+        <div className="flex flex-col items-center gap-4 px-4 md:-mt-20 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
+          {projectItems.map((item, index) => (
+            <ProjectBox
+              key={index}
+              darkTheme={darkTheme}
+              title={item.title}
+              description={item.description}
+              images={item.images}
+              links={item.links}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

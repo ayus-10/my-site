@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { CgHello } from "react-icons/cg";
+import { ImHappy2 } from "react-icons/im";
 import BeatLoader from "react-spinners/BeatLoader";
 import Notification from "./Notification";
 
@@ -76,7 +76,7 @@ const Contact = ({ darkTheme }) => {
             className="flex w-full flex-col md:w-2/3 lg:grid lg:grid-cols-2"
           >
             <div className="flex flex-col items-center justify-center gap-2 rounded-tl-lg rounded-tr-lg bg-purple-600 py-2 lg:rounded-bl-lg lg:rounded-tr-none">
-              <CgHello className="text-8xl text-white md:text-9xl" />
+              <ImHappy2 className="text-8xl text-white md:text-9xl" />
               <h1 className="font-pacifico text-3xl text-white md:text-4xl">
                 let's have a chat
               </h1>
@@ -97,7 +97,7 @@ const Contact = ({ darkTheme }) => {
                 type="text"
                 id="userMessage"
                 autoComplete="off"
-                placeholder="And your message for me?"
+                placeholder="And your message..."
                 required
               ></textarea>
               <button className="rounded-sm bg-purple-600 py-2 font-semibold text-white duration-200 ease-in-out hover:bg-purple-700">

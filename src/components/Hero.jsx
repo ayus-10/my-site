@@ -8,7 +8,7 @@ const Hero = ({ darkTheme }) => {
       className={`relative flex max-h-screen w-screen flex-grow px-4 ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
       id="hero"
     >
-      <div className="-mt-[3.25rem] flex flex-col-reverse justify-center gap-4 md:flex-row md:items-center md:gap-8">
+      <div className="mx-auto -mt-[3.25rem] flex flex-col-reverse justify-center gap-4 md:flex-row md:items-center md:gap-8">
         <div className="w-full text-center md:w-1/2 md:text-right">
           <h2
             className={`text-2xl font-semibold md:text-3xl ${darkTheme ? "text-purple-400 " : "text-purple-900 "}`}

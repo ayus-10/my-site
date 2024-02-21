@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import { RiArrowRightSFill } from "react-icons/ri";
 import { BsFileEarmarkCode, BsLayoutTextWindow } from "react-icons/bs";
@@ -9,9 +9,17 @@ const ProjectBox = ({ darkTheme, title, description, images, links }) => {
     setShowLinks((prev) => !prev);
   };
 
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      setShowLinks(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [showLinks]);
+
   return (
     <div
-      className={`h-full w-full rounded-lg duration-300 ease-in-out hover:shadow-lg md:w-[20rem] xl:w-[24rem] ${darkTheme ? "bg-gray-850" : "bg-white"}`}
+      className={`h-full w-full max-w-[32rem] rounded-lg duration-300 ease-in-out hover:shadow-lg md:w-[80%] ${darkTheme ? "bg-gray-850" : "bg-white"}`}
     >
       <div className="relative h-auto w-full">
         <Carousel images={images} darkTheme={darkTheme} />
@@ -25,7 +33,7 @@ const ProjectBox = ({ darkTheme, title, description, images, links }) => {
         onClick={toggleShowLinks}
       >
         <div
-          className={`items-center font-bold group-hover:underline ${showLinks ? "hidden" : "flex"}`}
+          className={`items-center py-1 font-bold group-hover:underline ${showLinks ? "hidden" : "flex"}`}
         >
           <span>VIEW</span>
           <RiArrowRightSFill className="relative text-lg duration-500 ease-in-out group-hover:translate-x-1 md:text-xl" />
@@ -35,14 +43,14 @@ const ProjectBox = ({ darkTheme, title, description, images, links }) => {
         ${showLinks ? "flex" : "hidden"}`}
         >
           <a
-            className="flex cursor-pointer items-center gap-1 rounded-l-lg bg-purple-600 px-2 py-2 duration-200 ease-in-out hover:bg-purple-700 md:px-4"
+            className="flex cursor-pointer items-center gap-1 rounded-l-lg bg-purple-600 px-2 py-1 duration-200 ease-in-out hover:bg-purple-700 md:px-4"
             href={links.code}
           >
             <BsFileEarmarkCode />
             <span>CODE</span>
           </a>
           <a
-            className="flex cursor-pointer items-center gap-1 rounded-r-lg bg-purple-600 px-2 py-2 duration-200 ease-in-out hover:bg-purple-700 md:px-4"
+            className="flex cursor-pointer items-center gap-1 rounded-r-lg bg-purple-600 px-2 py-1 duration-200 ease-in-out hover:bg-purple-700 md:px-4"
             href={links.demo}
           >
             <BsLayoutTextWindow />
