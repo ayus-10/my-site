@@ -10,11 +10,6 @@ export default {
         "gray-850": "#18202f",
       },
       keyframes: {
-        shake: {
-          "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-15px)" },
-          "100%": { transform: "translateY(0)" },
-        },
         fadeIn: {
           "0%": {
             visibility: "hidden",
@@ -37,7 +32,6 @@ export default {
         },
       },
       animation: {
-        shake: "shake 1s ease-in-out infinite",
         fadeIn: "fadeIn 1s forwards",
         fadeOut: "fadeOut 0.5s forwards",
       },
