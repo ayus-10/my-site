@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/my-image.jpg";
+import image from "../assets/my-image.webp";
 import SocialLinks from "./SocialLinks";
 
 const Hero = ({ darkTheme }) => {

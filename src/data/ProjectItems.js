@@ -1,11 +1,11 @@
-import anyflex1 from "../assets/anyflex1.png";
-import anyflex2 from "../assets/anyflex2.png";
-import quizzy1 from "../assets/quizzy1.png";
-import quizzy2 from "../assets/quizzy2.png";
-import quizzy3 from "../assets/quizzy3.png";
-import x1 from "../assets/x1.jpg";
-import x2 from "../assets/x2.jpg";
-import x3 from "../assets/x3.jpg";
+import anyflex1 from "../assets/anyflex1.webp";
+import anyflex2 from "../assets/anyflex2.webp";
+import quizzy1 from "../assets/quizzy1.webp";
+import quizzy2 from "../assets/quizzy2.webp";
+import quizzy3 from "../assets/quizzy3.webp";
+import x1 from "../assets/x1.webp";
+import x2 from "../assets/x2.webp";
+import x3 from "../assets/x3.webp";
 
 const projectItems = [
   {
