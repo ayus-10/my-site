@@ -1,5 +1,6 @@
 import anyflex1 from "../assets/anyflex1.webp";
 import anyflex2 from "../assets/anyflex2.webp";
+import anyflex3 from "../assets/anyflex3.webp";
 import quizzy1 from "../assets/quizzy1.webp";
 import quizzy2 from "../assets/quizzy2.webp";
 import quizzy3 from "../assets/quizzy3.webp";
@@ -12,7 +13,7 @@ const projectItems = [
     title: "Anime Showcase Site",
     description:
       "A Next.js app that lets users explore and save favorite anime to their watchlist, users being authenticated via Discord OAuth.",
-    images: [anyflex1, anyflex2],
+    images: [anyflex1, anyflex2, anyflex3],
     links: {
       code: "https://github.com/ayus-10/any-flex",
       demo: "https://any-flex.vercel.app/",
