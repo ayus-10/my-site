@@ -8,7 +8,7 @@ import x1 from "../assets/x1.webp";
 import x2 from "../assets/x2.webp";
 import x3 from "../assets/x3.webp";
 
-const projectItems = [
+export const projectItems = [
   {
     title: "Anime Showcase Site",
     description:
@@ -40,5 +40,3 @@ const projectItems = [
     },
   },
 ];
-
-export default projectItems;

@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectBox from "./ProjectBox";
-import projectItems from "../data/ProjectItems";
+import { projectItems } from "../data/ProjectItems";
 
 const Projects = ({ darkTheme }) => {
   return (
@@ -14,7 +14,7 @@ const Projects = ({ darkTheme }) => {
         </h1>
       </div>
       <div className="flex grow flex-col justify-center">
-        <div className="flex flex-col items-center gap-4 px-4 md:-mt-20 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
+        <div className="flex flex-col items-center gap-4 p-4 md:-mt-20 md:grid md:grid-cols-2 md:place-items-center lg:grid-cols-3">
           {projectItems.map((item, index) => (
             <ProjectBox
               key={index}
