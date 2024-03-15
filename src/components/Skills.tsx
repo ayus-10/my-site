@@ -11,7 +11,7 @@ const Skills = ({ darkTheme }: { darkTheme: boolean }) => {
       className={`flex min-h-screen w-screen ${darkTheme ? "bg-gray-850" : "bg-gray-100"}`}
       id="skills"
     >
-      <div className="flex grow flex-col px-4 py-12">
+      <div className="flex grow flex-col px-2 py-12">
         <h1 className="text-center text-3xl font-bold text-purple-600 md:my-2 md:text-5xl">
           Which tools can I work with?
         </h1>
@@ -22,18 +22,20 @@ const Skills = ({ darkTheme }: { darkTheme: boolean }) => {
               ref={itemsRef}
             >
               {skillItems.map((item, index) => {
+                const animation = {
+                  scale: 1.2,
+                  transition: {
+                    duration: 0,
+                  },
+                };
                 return (
                   <motion.div
-                    whileHover={{
-                      scale: 1.2,
-                      transition: {
-                        duration: 0,
-                      },
-                    }}
+                    whileHover={animation}
+                    whileTap={animation}
                     key={index}
-                    className={`flex flex-col items-center justify-center rounded-lg p-4 duration-300 ease-in-out hover:bg-purple-600 hover:text-white md:flex-row md:py-8 ${darkTheme ? "text-gray-400" : "text-gray-500"}`}
+                    className={`flex flex-col items-center justify-center rounded-lg p-4 duration-300 ease-in-out hover:bg-purple-600 hover:text-white md:py-8 ${darkTheme ? "text-gray-400" : "text-gray-500"}`}
                   >
-                    <div className="text-3xl md:text-4xl">{item.image}</div>
+                    <div className="text-5xl md:text-7xl">{item.image}</div>
                     <span className="cursor-default text-lg md:text-3xl md:font-bold">
                       {item.name}
                     </span>

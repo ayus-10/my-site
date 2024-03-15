@@ -71,7 +71,7 @@ const Contact = ({ darkTheme }: { darkTheme: boolean }) => {
         </h1>
         <div className="flex flex-grow flex-col justify-center">
           <AnimateScale>
-            <div className="relative grid place-items-center">
+            <div className="grid place-items-center">
               {notification.status ? (
                 <Notification
                   setNotification={setNotification}

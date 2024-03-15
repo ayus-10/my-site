@@ -23,7 +23,7 @@ const Notification = (props: NotificationProps) => {
 
   return (
     <div
-      className={`absolute right-1/2 top-4 w-full translate-x-1/2 rounded-lg px-2 py-2 text-center font-bold text-white md:w-2/3 md:px-4 md:text-lg ${status ? "bg-green-500" : "bg-red-500"}`}
+      className={`fixed right-1/2 top-0 w-full translate-x-1/2 rounded-b-lg px-2 py-2 text-center font-bold text-white md:w-2/3 md:px-4 md:text-lg ${status ? "bg-green-500" : "bg-red-500"}`}
     >
       <span>{message}</span>
     </div>
