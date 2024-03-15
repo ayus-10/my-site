@@ -1,4 +1,3 @@
-import React from "react";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { SiMinutemailer } from "react-icons/si";

@@ -1,9 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const Carousel = ({ images, darkTheme }) => {
+type CarouselProps = {
+  images: string[];
+  darkTheme: boolean;
+};
+
+const Carousel = (props: CarouselProps) => {
+  const { images, darkTheme } = props;
+
   const [imageIndex, setImageIndex] = useState(0);
 
-  const imageRef = useRef();
+  const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (imageRef.current) {
@@ -28,7 +35,7 @@ const Carousel = ({ images, darkTheme }) => {
         className={`rounded-t-lg border-b-2 border-dashed ${darkTheme ? "border-purple-500" : "border-purple-600"}`}
         ref={imageRef}
         onAnimationEnd={() => {
-          imageRef.current.classList.remove("animate-fadeIn");
+          imageRef.current?.classList.remove("animate-fadeIn");
         }}
       />
       <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 gap-4">

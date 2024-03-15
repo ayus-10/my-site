@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -25,14 +25,14 @@ const App = () => {
 
   useEffect(() => {
     // On initial page load, get previous darkTheme state
-    let dark_theme = JSON.parse(localStorage.getItem("dark_theme"));
+    let dark_theme = localStorage.getItem("dark_theme");
     if (dark_theme) {
       // Set previous state if its not null
-      setDarkTheme(dark_theme);
+      setDarkTheme(JSON.parse(dark_theme));
     }
   }, []);
 
-  const changeTheme = () => {
+  const toggleTheme = () => {
     // Toggle dark theme state
     setDarkTheme(!darkTheme);
     // Saving !darkTheme because the state will only be updated on next re-render
@@ -44,9 +44,9 @@ const App = () => {
       className={`min-h-screen overflow-hidden ${darkTheme ? "text-white" : "text-gray-900"}`}
     >
       <div className="flex min-h-screen flex-col" id="home" ref={heroComponent}>
-        <Navbar changeTheme={changeTheme} darkTheme={darkTheme} />
+        <Navbar toggleTheme={toggleTheme} darkTheme={darkTheme} />
         <Hero darkTheme={darkTheme} />
-        <ScrollTop setVisibility={showScrollUp} />
+        <ScrollTop visibility={showScrollUp} />
       </div>
       <Skills darkTheme={darkTheme} />
       <Projects darkTheme={darkTheme} />

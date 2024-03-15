@@ -1,30 +1,36 @@
-import React, { useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import axios from "axios";
 import { BsEmojiLaughingFill } from "react-icons/bs";
 import BeatLoader from "react-spinners/BeatLoader";
 import Notification from "./Notification";
 import AnimateScale from "./animation/AnimateScale";
 
-const Contact = ({ darkTheme }) => {
+export type NotificationState = {
+  status: boolean | null;
+  message: string;
+};
+
+const Contact = ({ darkTheme }: { darkTheme: boolean }) => {
   const API_URL = "https://dull-pear-scallop-boot.cyclic.app/submit";
 
   const [loading, setLoading] = useState(false);
 
-  const [notification, setNotification] = useState({
+  const [notification, setNotification] = useState<NotificationState>({
     status: null,
-    message: null,
+    message: "",
   });
 
-  const handleForm = (event) => {
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const messageInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formElement = event.target;
+    const emailInput = emailInputRef.current;
+    const messageInput = messageInputRef.current;
 
-    const emailInput = formElement.querySelector("#userEmail");
-    const email = emailInput.value;
-
-    const messageInput = formElement.querySelector("#userMessage");
-    const message = messageInput.value;
+    const email = emailInput?.value;
+    const message = messageInput?.value;
 
     const formData = { email, message };
 
@@ -40,12 +46,14 @@ const Contact = ({ darkTheme }) => {
       })
       .finally(() => {
         setLoading(false);
-        emailInput.value = "";
-        messageInput.value = "";
+        if (emailInput?.value && messageInput?.value) {
+          emailInput.value = "";
+          messageInput.value = "";
+        }
       });
   };
 
-  const handleNotification = (status, message) => {
+  const handleNotification = (status: boolean, message: string) => {
     setNotification({
       status: status,
       message: message,
@@ -92,6 +100,7 @@ const Contact = ({ darkTheme }) => {
                       Email
                     </label>
                     <input
+                      ref={emailInputRef}
                       className={`rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2 ${darkTheme ? "bg-gray-850" : "bg-white"}`}
                       type="text"
                       id="userEmail"
@@ -108,8 +117,8 @@ const Contact = ({ darkTheme }) => {
                       Message
                     </label>
                     <textarea
+                      ref={messageInputRef}
                       className={`h-24 resize-none rounded-sm p-2 outline-none ring-purple-600 duration-500 ease-in-out focus:ring-2 md:h-40 ${darkTheme ? "bg-gray-850" : "bg-white"}`}
-                      type="text"
                       id="userMessage"
                       autoComplete="off"
                       placeholder="And your message..."

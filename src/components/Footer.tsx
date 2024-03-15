@@ -1,6 +1,4 @@
-import React from "react";
-
-const Footer = ({ darkTheme }) => {
+const Footer = ({ darkTheme }: { darkTheme: boolean }) => {
   return (
     <div
       className={`w-screen px-4 py-4 text-center md:px-8 ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}

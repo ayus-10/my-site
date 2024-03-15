@@ -1,8 +1,7 @@
-import React from "react";
 import ProjectBox from "./ProjectBox";
 import { projectItems } from "../data/ProjectItems";
 
-const Projects = ({ darkTheme }) => {
+const Projects = ({ darkTheme }: { darkTheme: boolean }) => {
   return (
     <div
       className={`flex min-h-screen w-screen flex-col ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}

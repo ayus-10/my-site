@@ -1,11 +1,31 @@
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-const AnimateSlide = ({ children, direction }) => {
-  const hidden = {
+type AnimateSlideProps = {
+  children: ReactNode;
+  direction: "left" | "down";
+};
+
+type HiddenVariant = {
+  opacity: number;
+  translateX?: number;
+  translateY?: number;
+};
+
+type VisibleVariant = HiddenVariant & {
+  transition: {
+    delay: number;
+  };
+};
+
+const AnimateSlide = (props: AnimateSlideProps) => {
+  const { children, direction } = props;
+
+  const hidden: HiddenVariant = {
     opacity: 0,
   };
 
-  const visible = {
+  const visible: VisibleVariant = {
     opacity: 1,
     transition: {
       delay: 0.2,
@@ -13,10 +33,10 @@ const AnimateSlide = ({ children, direction }) => {
   };
 
   if (direction === "left") {
-    hidden.translateX = "-100px";
+    hidden.translateX = -100;
     visible.translateX = 0;
   } else if (direction === "down") {
-    hidden.translateY = "-100px";
+    hidden.translateY = -100;
     visible.translateY = 0;
   }
 

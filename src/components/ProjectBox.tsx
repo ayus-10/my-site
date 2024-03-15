@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import { RiArrowRightSFill } from "react-icons/ri";
 import { BsFileEarmarkCode, BsLayoutTextWindow } from "react-icons/bs";
 
-const ProjectBox = ({ darkTheme, title, description, images, links }) => {
+type ProjectBoxProps = {
+  darkTheme: boolean;
+  title: string;
+  description: string;
+  images: string[];
+  links: {
+    code: string;
+    demo: string;
+  };
+};
+
+const ProjectBox = (props: ProjectBoxProps) => {
+  const { darkTheme, title, description, images, links } = props;
+
   const [showLinks, setShowLinks] = useState(false);
   const toggleShowLinks = () => {
     setShowLinks((prev) => !prev);

@@ -1,11 +1,20 @@
-import React, { useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { NotificationState } from "./Contact";
 
-const Notification = ({ setNotification, status, message }) => {
+type NotificationProps = {
+  setNotification: Dispatch<SetStateAction<NotificationState>>;
+  status: boolean;
+  message: string;
+};
+
+const Notification = (props: NotificationProps) => {
+  const { setNotification, status, message } = props;
+
   useEffect(() => {
     let timeoutId = setTimeout(() => {
       setNotification({
         status: null,
-        message: null,
+        message: "",
       });
     }, 5000);
 

@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
-import { skillItems } from "../data/SkillItems.jsx";
-import AnimateSlide from "./animation/AnimateSlide.jsx";
+import { useRef } from "react";
+import { skillItems } from "../data/SkillItems.js";
+import AnimateSlide from "./animation/AnimateSlide.js";
 import { motion } from "framer-motion";
 
-const Skills = ({ darkTheme }) => {
-  const itemsRef = useRef();
+const Skills = ({ darkTheme }: { darkTheme: boolean }) => {
+  const itemsRef = useRef<HTMLDivElement>(null);
 
   return (
     <div

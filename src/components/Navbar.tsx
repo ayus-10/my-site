@@ -1,9 +1,15 @@
-import React from "react";
 import { Link } from "react-scroll";
 import { IoMoon } from "react-icons/io5";
 import { IoIosSunny } from "react-icons/io";
 
-const Navbar = ({ changeTheme, darkTheme }) => {
+type NavbarProps = {
+  toggleTheme: () => void;
+  darkTheme: boolean;
+};
+
+const Navbar = (props: NavbarProps) => {
+  const { toggleTheme, darkTheme } = props;
+
   const navLinks = ["skills", "projects", "contact"];
 
   return (
@@ -12,7 +18,7 @@ const Navbar = ({ changeTheme, darkTheme }) => {
     >
       <button
         className="absolute left-[2vw] top-[calc(3.25rem+2vw)] flex rounded-full bg-purple-600 p-2 text-3xl text-white md:left-1 md:top-1/2 md:-translate-y-1/2"
-        onClick={changeTheme}
+        onClick={toggleTheme}
       >
         {darkTheme ? <IoIosSunny /> : <IoMoon />}
       </button>

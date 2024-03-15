@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-const AnimateScale = ({ children }) => {
+const AnimateScale = ({ children }: { children: ReactNode }) => {
   return (
     <motion.div
       initial="hidden"

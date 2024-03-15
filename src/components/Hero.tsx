@@ -1,10 +1,9 @@
-import React from "react";
 import image from "../assets/my-image.webp";
 import SocialLinks from "./SocialLinks";
 import AnimateScale from "./animation/AnimateScale";
 import AnimateSlide from "./animation/AnimateSlide";
 
-const Hero = ({ darkTheme }) => {
+const Hero = ({ darkTheme }: { darkTheme: boolean }) => {
   return (
     <div
       className={`relative flex max-h-screen w-screen flex-grow px-4 ${darkTheme ? "bg-gray-800" : "bg-gray-200"}`}
