@@ -31,7 +31,7 @@ const Hero = ({ darkTheme }: { darkTheme: boolean }) => {
           <img
             src={image}
             alt="My image"
-            className="mx-auto h-auto w-48 rounded-full border-2 border-dashed border-purple-600 md:mx-0 md:w-96 md:rounded-3xl md:border-4"
+            className="mx-auto aspect-square size-48 rounded-full border-2 border-dashed border-purple-600 md:mx-0 md:size-96 md:rounded-3xl md:border-4"
           />
         </AnimateScale>
       </div>

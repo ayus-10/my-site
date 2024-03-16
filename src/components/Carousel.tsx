@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 type CarouselProps = {
+  title: string;
   images: string[];
   darkTheme: boolean;
 };
 
 const Carousel = (props: CarouselProps) => {
-  const { images, darkTheme } = props;
+  const { title, images, darkTheme } = props;
 
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -29,10 +30,11 @@ const Carousel = (props: CarouselProps) => {
   }, [imageIndex]);
 
   return (
-    <div className="relative h-full w-full rounded-t-lg">
+    <div className="relative size-full rounded-t-lg">
       <img
-        src={`${images[imageIndex]}`}
-        className={`rounded-t-lg border-b-2 border-dashed ${darkTheme ? "border-purple-500" : "border-purple-600"}`}
+        src={images[imageIndex]}
+        alt={`Demo image from project ${title}`}
+        className={`size-full flex-shrink-0 rounded-t-lg border-b-2 border-dashed ${darkTheme ? "border-purple-500" : "border-purple-600"}`}
         ref={imageRef}
         onAnimationEnd={() => {
           imageRef.current?.classList.remove("animate-fadeIn");

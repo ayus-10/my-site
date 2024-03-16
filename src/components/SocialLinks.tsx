@@ -5,16 +5,19 @@ import { SiMinutemailer } from "react-icons/si";
 const SocialLinks = () => {
   const socialLinks = [
     {
+      title: "GitHub",
       url: "https://github.com/ayus-10",
       icon: <TbBrandGithubFilled />,
       color: "#333",
     },
     {
+      title: "LinkedIn",
       url: "https://www.linkedin.com/in/aayush-upreti-a21945293/",
       icon: <LiaLinkedinIn />,
       color: "#0a66c2",
     },
     {
+      title: "Email",
       url: "mailto:contact@aayushupreti.com.np",
       icon: <SiMinutemailer />,
       color: "#ea4335",
@@ -29,7 +32,11 @@ const SocialLinks = () => {
           style={{ backgroundColor: link.color }}
           key={index}
         >
-          <a className="text-3xl text-white md:text-4xl" href={link.url}>
+          <a
+            aria-label={`${link.title} Link`}
+            className="text-3xl text-white md:text-4xl"
+            href={link.url}
+          >
             {link.icon}
           </a>
         </span>

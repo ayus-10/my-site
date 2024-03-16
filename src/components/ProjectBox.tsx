@@ -13,10 +13,11 @@ type ProjectBoxProps = {
     code: string;
     demo: string;
   };
+  index: number;
 };
 
 const ProjectBox = (props: ProjectBoxProps) => {
-  const { darkTheme, title, description, images, links } = props;
+  const { darkTheme, title, description, images, links, index } = props;
 
   const [showLinks, setShowLinks] = useState(false);
   const toggleShowLinks = () => {
@@ -34,16 +35,17 @@ const ProjectBox = (props: ProjectBoxProps) => {
   return (
     <AnimateScale>
       <div
-        className={`mx-auto h-full w-full max-w-[32rem] rounded-lg duration-300 ease-in-out hover:shadow-lg md:w-[80%] ${darkTheme ? "bg-gray-850" : "bg-white"}`}
+        className={`mx-auto rounded-lg duration-300 ease-in-out hover:shadow-lg md:w-[300px] lg:w-[360px] xl:w-[420px] ${darkTheme ? "bg-gray-850" : "bg-white"}`}
       >
-        <div className="relative h-auto w-full">
-          <Carousel images={images} darkTheme={darkTheme} />
+        <div className="relative aspect-video w-full">
+          <Carousel title={title} images={images} darkTheme={darkTheme} />
         </div>
         <h1 className="mx-4 mt-4 text-xl font-bold text-purple-600 md:text-2xl">
           {title}
         </h1>
         <p className="mx-4 mb-6 mt-2 md:text-lg">{description}</p>
         <button
+          id={`showLinks${index}`}
           className="group mx-4 flex pb-4 text-purple-600 md:text-lg"
           onClick={toggleShowLinks}
         >

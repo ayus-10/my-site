@@ -3,7 +3,7 @@ import axios from "axios";
 import { BsEmojiLaughingFill } from "react-icons/bs";
 import BeatLoader from "react-spinners/BeatLoader";
 import Notification from "./Notification";
-import AnimateScale from "./animation/AnimateScale";
+import AnimateSlide from "./animation/AnimateSlide";
 
 export type NotificationState = {
   status: boolean | null;
@@ -70,7 +70,7 @@ const Contact = ({ darkTheme }: { darkTheme: boolean }) => {
           Leave me a message.
         </h1>
         <div className="flex flex-grow flex-col justify-center">
-          <AnimateScale>
+          <AnimateSlide direction="down">
             <div className="grid place-items-center">
               {notification.status ? (
                 <Notification
@@ -125,7 +125,10 @@ const Contact = ({ darkTheme }: { darkTheme: boolean }) => {
                       required
                     ></textarea>
                   </div>
-                  <button className="rounded-sm bg-purple-600 py-2 font-semibold text-white duration-200 ease-in-out hover:bg-purple-700">
+                  <button
+                    id="submit"
+                    className="rounded-sm bg-purple-600 py-2 font-semibold text-white duration-200 ease-in-out hover:bg-purple-700"
+                  >
                     {loading ? (
                       <BeatLoader color={"white"} loading={loading} />
                     ) : (
@@ -135,7 +138,7 @@ const Contact = ({ darkTheme }: { darkTheme: boolean }) => {
                 </div>
               </form>
             </div>
-          </AnimateScale>
+          </AnimateSlide>
         </div>
       </div>
     </div>
