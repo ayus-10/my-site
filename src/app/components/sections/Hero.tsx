@@ -3,19 +3,19 @@ import LinkButton from "../LinkButton";
 export default function Hero() {
   return (
     <section
-      className="w-screen h-screen px-12 py-8 max-w-[1200px] mx-auto"
+      className="mx-auto h-screen w-screen max-w-[1200px] px-12 py-8"
       id="hero-section"
     >
-      <h3 className="md:text-xl font-semibold text-lg text-my-red">
+      <h3 className="text-lg font-semibold text-my-red md:text-xl">
         Hey there, this is
       </h3>
-      <h1 className="font-bold md:text-7xl mb-2 text-5xl text-my-white">
+      <h1 className="mb-2 text-5xl font-bold text-my-white md:text-7xl">
         Aayush Upreti
       </h1>
-      <h2 className="font-bold md:text-5xl mb-2 text-5xl text-my-silver">
+      <h2 className="mb-2 text-5xl font-bold text-my-silver md:text-5xl">
         A full-stack web developer
       </h2>
-      <p className="text-my-silver my-8 md:text-lg max-w-[600px]">
+      <p className="my-8 max-w-[600px] text-my-silver md:text-lg">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. In sed, odio
         distinctio error ex repellat repellendus quasi velit provident deserunt,
         facilis repudiandae vero assumenda? Aliquid quos eum quaerat consectetur
