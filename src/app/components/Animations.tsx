@@ -51,3 +51,21 @@ export function VariantSingleElementAnimation({
     </VariantParentAnimation>
   );
 }
+
+export default function SectionScrollAnimation({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.7, once: true }}
+      transition={{ duration: 0.4 }}
+      variants={childVariant}
+    >
+      {children}
+    </motion.section>
+  );
+}
