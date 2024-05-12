@@ -69,40 +69,42 @@ export default function Header() {
           <div className="h-0.5 w-0 bg-my-red duration-200 ease-in-out group-hover:w-full group-focus:w-full"></div>
         </Link>
       </VariantSingleElementAnimation>
-      <VariantSingleElementAnimation>
-        <button
-          onClick={() => setShowMobileNav((prev) => !prev)}
-          className="block text-3xl text-my-red md:hidden"
-        >
-          {showMobileNav ? <AiOutlineClose /> : <PiHamburgerLight />}
-        </button>
-      </VariantSingleElementAnimation>
-      <VariantParentAnimation>
-        <nav
-          className={`fixed inset-0 flex h-screen w-[69%] flex-col justify-center gap-24 border-r-[1px] border-my-blue-light bg-my-blue pl-12 duration-200 ease-in-out md:static md:h-auto md:w-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:pl-0 ${
-            showMobileNav
-              ? "translate-x-0"
-              : "-translate-x-full md:translate-x-0"
-          }`}
-        >
-          {navLinks.map((link, index) => (
-            <VariantChildAnimation key={link.target}>
-              <Link
-                spy={true}
-                smooth={true}
-                duration={200}
-                to={link.target}
-                onClick={() => setShowMobileNav(false)}
-                className="group cursor-pointer text-xl outline-none md:font-semibold"
-              >
-                <span className="text-my-red">{index + 1}. </span>
-                <span className="text-my-white">{link.title}</span>
-                <div className="h-0.5 w-0 bg-my-red duration-200 ease-in-out group-hover:w-full group-focus:w-full"></div>
-              </Link>
-            </VariantChildAnimation>
-          ))}
-        </nav>
-      </VariantParentAnimation>
+      <div>
+        <VariantSingleElementAnimation>
+          <button
+            onClick={() => setShowMobileNav((prev) => !prev)}
+            className="block text-3xl text-my-red md:hidden"
+          >
+            {showMobileNav ? <AiOutlineClose /> : <PiHamburgerLight />}
+          </button>
+        </VariantSingleElementAnimation>
+        <VariantParentAnimation>
+          <nav
+            className={`fixed inset-0 flex h-screen w-[69%] flex-col justify-center gap-24 border-r-[1px] border-my-blue-light bg-my-blue pl-12 duration-200 ease-in-out md:static md:h-auto md:w-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:pl-0 ${
+              showMobileNav
+                ? "translate-x-0"
+                : "-translate-x-full md:translate-x-0"
+            }`}
+          >
+            {navLinks.map((link, index) => (
+              <VariantChildAnimation key={link.target}>
+                <Link
+                  spy={true}
+                  smooth={true}
+                  duration={200}
+                  to={link.target}
+                  onClick={() => setShowMobileNav(false)}
+                  className="group cursor-pointer text-xl outline-none md:font-semibold"
+                >
+                  <span className="text-my-red">{index + 1}. </span>
+                  <span className="text-my-white">{link.title}</span>
+                  <div className="h-0.5 w-0 bg-my-red duration-200 ease-in-out group-hover:w-full group-focus:w-full"></div>
+                </Link>
+              </VariantChildAnimation>
+            ))}
+          </nav>
+        </VariantParentAnimation>
+      </div>
     </header>
   );
 }
