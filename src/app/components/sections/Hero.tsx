@@ -4,7 +4,7 @@ import { VariantParentAnimation, VariantChildAnimation } from "../Animations";
 export default function Hero() {
   return (
     <section
-      className="mx-auto -mt-[5.875rem] flex h-screen w-screen max-w-[1200px] items-center"
+      className="mx-auto -mt-[5.875rem] flex min-h-screen w-screen max-w-[1200px] items-center"
       id="hero-section"
     >
       <VariantParentAnimation>
@@ -26,7 +26,7 @@ export default function Hero() {
           </VariantChildAnimation>
           <VariantChildAnimation>
             <p className="my-6 max-w-[600px] text-my-silver md:my-8 md:text-lg">
-              I am a Computer Science student from Nepal, passionate about
+              I am a Computer Science student from Nepal who is passionate about
               building stuff for the web and constantly exploring various
               frontend and backend technologies. Feel free to drop me a message!
             </p>

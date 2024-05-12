@@ -80,7 +80,7 @@ export default function Header() {
         </VariantSingleElementAnimation>
         <VariantParentAnimation>
           <nav
-            className={`fixed inset-0 flex h-screen w-[69%] flex-col justify-center gap-24 border-r-[1px] border-my-blue-light bg-my-blue pl-12 duration-200 ease-in-out md:static md:h-auto md:w-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:pl-0 ${
+            className={`fixed inset-0 flex h-screen w-[69%] flex-col justify-center gap-24 border-r-[1px] border-my-blue-light bg-my-blue px-12 duration-200 ease-in-out md:static md:h-auto md:w-auto md:flex-row md:items-center md:border-0 md:bg-transparent md:px-0 ${
               showMobileNav
                 ? "translate-x-0"
                 : "-translate-x-full md:translate-x-0"

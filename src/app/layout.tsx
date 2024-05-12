@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main className="bg-my-blue">{children}</main>
+        <main className="overflow-x-hidden bg-my-blue">{children}</main>
       </body>
     </html>
   );
