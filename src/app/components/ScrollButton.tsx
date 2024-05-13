@@ -10,10 +10,10 @@ export default function ScrollButton(props: ScrollButtonProps) {
 
   return (
     <Link
-      to={target}
       spy={true}
       smooth={true}
       duration={200}
+      to={target}
       delay={100}
       className="group relative z-10 inline-flex cursor-pointer outline-none"
     >

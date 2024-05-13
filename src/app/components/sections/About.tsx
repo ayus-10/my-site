@@ -7,9 +7,9 @@ export default function About() {
     "HTML/CSS",
     "JavaScript",
     "TypeScript",
-    "React/NextJS",
+    "React/Next JS",
     "Angular",
-    "Express/NestJS",
+    "Node/Nest JS",
     "MongoDB",
     "Python",
   ];
@@ -17,7 +17,7 @@ export default function About() {
   return (
     <SectionScrollAnimation>
       <section
-        className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col items-center justify-center gap-8 px-12 md:flex-row md:justify-start"
+        className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col items-center justify-center gap-8 px-12 pt-[6rem] md:flex-row md:justify-start md:pt-0"
         id="about-section"
       >
         <div className="group relative size-[250px] min-h-[250px] md:size-[350px] md:min-w-[350px]">
@@ -50,7 +50,7 @@ export default function About() {
                 className="flex items-center rounded-sm duration-200 ease-in-out hover:bg-my-blue-light"
               >
                 <FaCaretRight className="text-xl text-my-red" />
-                <span className="break-all">{item}</span>
+                <span className="break-words">{item}</span>
               </li>
             ))}
           </ul>
