@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "360px",
+      },
       colors: {
         "my-blue": "#273043",
         "my-blue-light": "#3f495e",

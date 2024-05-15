@@ -8,7 +8,7 @@ export default function Hero() {
       id="hero-section"
     >
       <VariantParentAnimation>
-        <div className="px-12 py-8">
+        <div className="px-6 py-8">
           <VariantChildAnimation>
             <h3 className="text-lg font-semibold text-my-red md:text-xl">
               👋 Hey there, this is

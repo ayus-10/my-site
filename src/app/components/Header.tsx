@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky inset-0 z-50 flex h-[5.875rem] items-center justify-between px-12 transition-[padding] duration-200 ease-in-out ${
+      className={`sticky inset-0 z-50 flex h-[5.875rem] items-center justify-between px-6 transition-[padding] duration-200 ease-in-out md:px-12 ${
         transparentBackground
           ? `py-8 ${showMobileNav ? "bg-my-blue" : "bg-transparent backdrop-blur-md"} md:py-6`
           : "bg-my-blue py-8"
