@@ -7,7 +7,7 @@ export default function Projects() {
       className="mx-auto min-h-screen w-screen max-w-[1200px] px-6 pt-[6rem]"
       id="projects-section"
     >
-      <h1 className="mb-2 text-2xl font-semibold text-my-red md:mb-4 md:text-3xl">
+      <h1 className="mb-4 text-2xl font-semibold text-my-red md:text-3xl">
         Projects
       </h1>
       <div className="flex flex-col items-center gap-12">

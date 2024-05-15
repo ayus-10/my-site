@@ -54,7 +54,7 @@ export function VariantSingleElementAnimation({
   );
 }
 
-export default function SectionScrollAnimation({
+export function SectionScrollAnimation({
   children,
 }: {
   children: React.ReactNode;
