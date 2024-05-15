@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const parentVariant = {
@@ -59,6 +61,7 @@ export default function SectionScrollAnimation({
 }) {
   return (
     <motion.section
+      style={{ width: "100%" }}
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.7, once: true }}
