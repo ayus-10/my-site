@@ -26,7 +26,7 @@ export default function Contact() {
   return (
     <SectionScrollAnimation>
       <section
-        className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col justify-center gap-8 px-6 md:flex-row md:items-center md:justify-between md:gap-4"
+        className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col justify-center gap-8 px-6 md:gap-4"
         id="contact-section"
       >
         <div className="max-w-[600px]">
@@ -35,12 +35,11 @@ export default function Contact() {
           </h1>
           <p className="text-my-silver md:text-lg">
             Let&apos;s build something awesome together! Or just connect and
-            chat.
-            <br />
-            💬Feel free to connect with me on the following platforms.
+            have a chat 💬. Feel free to connect with me on the following
+            platforms.
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 md:flex-row">
           {contactLinks.map((link) => (
             <Link
               key={link.title}
@@ -48,10 +47,10 @@ export default function Contact() {
               aria-label={`url for ${link.title}`}
               className="group flex items-center gap-1"
             >
-              <div className="grid size-[1.5rem] place-content-center rounded-full bg-my-red text-lg text-my-white duration-200 ease-in-out group-hover:bg-my-white group-hover:text-my-red md:size-[2rem] md:text-xl">
+              <div className="grid size-[1.5rem] place-content-center rounded-full bg-my-red text-lg text-my-white duration-200 ease-in-out group-hover:bg-my-white group-hover:text-my-red md:size-[2.5rem] md:text-3xl">
                 {link.icon}
               </div>
-              <div className="text-lg font-semibold text-my-white md:text-xl">
+              <div className="text-lg font-semibold text-my-white md:hidden">
                 {link.title}
               </div>
             </Link>
