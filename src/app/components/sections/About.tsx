@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SectionScrollAnimation } from "../Animations";
+import { ScrollVisibleAnimation } from "../Animations";
 import { FaCaretRight } from "react-icons/fa";
 
 export default function About() {
@@ -15,7 +15,7 @@ export default function About() {
   ];
 
   return (
-    <SectionScrollAnimation>
+    <ScrollVisibleAnimation>
       <section
         className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col justify-center gap-8 px-6 pt-[6rem] md:flex-row md:items-center md:justify-start md:pt-0"
         id="about-section"
@@ -56,6 +56,6 @@ export default function About() {
           </ul>
         </div>
       </section>
-    </SectionScrollAnimation>
+    </ScrollVisibleAnimation>
   );
 }

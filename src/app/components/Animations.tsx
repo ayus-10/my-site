@@ -54,7 +54,26 @@ export function VariantSingleElementAnimation({
   );
 }
 
-export function SectionScrollAnimation({
+export function ScrollAppearAnimation({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <motion.div
+      style={{ width: "100%" }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.7, once: true }}
+      transition={{ duration: 0.4 }}
+      variants={childVariant}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function ScrollVisibleAnimation({
   children,
 }: {
   children: React.ReactNode;
@@ -66,7 +85,10 @@ export function SectionScrollAnimation({
       whileInView="visible"
       viewport={{ amount: 0.7, once: true }}
       transition={{ duration: 0.4 }}
-      variants={childVariant}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
     >
       {children}
     </motion.section>

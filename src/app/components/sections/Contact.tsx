@@ -1,7 +1,7 @@
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { HiMail } from "react-icons/hi";
 import { TiSocialLinkedin } from "react-icons/ti";
-import { SectionScrollAnimation } from "../Animations";
+import { ScrollVisibleAnimation } from "../Animations";
 import Link from "next/link";
 
 export default function Contact() {
@@ -24,7 +24,7 @@ export default function Contact() {
   ];
 
   return (
-    <SectionScrollAnimation>
+    <ScrollVisibleAnimation>
       <section
         className="mx-auto flex min-h-screen w-screen max-w-[1200px] flex-col justify-center gap-8 px-6 md:gap-4"
         id="contact-section"
@@ -57,6 +57,6 @@ export default function Contact() {
           ))}
         </div>
       </section>
-    </SectionScrollAnimation>
+    </ScrollVisibleAnimation>
   );
 }

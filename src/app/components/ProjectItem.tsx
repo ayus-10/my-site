@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ProjectItemDetails } from "./sections/data/ProjectsData";
 import { HiCode, HiOutlineExternalLink } from "react-icons/hi";
-import { SectionScrollAnimation } from "./Animations";
+import { ScrollAppearAnimation } from "./Animations";
 
 type ProjectItemProps = {
   align: "left" | "right";
@@ -20,7 +20,7 @@ export default function ProjectItem(props: ProjectItemProps) {
   } = props;
 
   return (
-    <SectionScrollAnimation>
+    <ScrollAppearAnimation>
       <div className="relative mx-auto w-[256px] xs:w-[320px] md:mx-0 md:w-full">
         <div
           className={`relative h-[144px] w-[256px] overflow-hidden rounded-t-sm xs:h-[180px] xs:w-[320px] md:h-[360px] md:w-[640px] md:rounded-b-sm ${align === "left" && "ml-auto"}`}
@@ -60,6 +60,6 @@ export default function ProjectItem(props: ProjectItemProps) {
           </div>
         </div>
       </div>
-    </SectionScrollAnimation>
+    </ScrollAppearAnimation>
   );
 }
