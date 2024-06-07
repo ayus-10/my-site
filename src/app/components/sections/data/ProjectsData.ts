@@ -12,6 +12,17 @@ export type ProjectItemDetails = {
 export const projectsList: ProjectItemDetails[] = [
   {
     id: 1,
+    title: "Blogging Platform",
+    imageSrc: "/blogit.jpg",
+    description:
+      "A blogging app built with Angular and NestJS, featuring user authentication and blog creation with image uploads.",
+    links: {
+      demo: "https://blog-it-frontend-phi.vercel.app/",
+      code: "https://github.com/ayus-10/blog-it-frontend",
+    },
+  },
+  {
+    id: 2,
     title: "Anime Showcase Site",
     imageSrc: "/anyflex.jpg",
     description:
@@ -22,7 +33,7 @@ export const projectsList: ProjectItemDetails[] = [
     },
   },
   {
-    id: 2,
+    id: 3,
     title: "Quiz App",
     imageSrc: "/quizzy.jpg",
     description:
@@ -30,17 +41,6 @@ export const projectsList: ProjectItemDetails[] = [
     links: {
       demo: "https://quizzy-frontend-flax.vercel.app/",
       code: "https://github.com/ayus-10/quizzy-frontend",
-    },
-  },
-  {
-    id: 3,
-    title: "E-Commerce Site",
-    imageSrc: "/project-x.jpg",
-    description:
-      "A React app that dynamically loads items and provides item browsing, searching, sorting, viewing, and cart management.",
-    links: {
-      demo: "https://project-x-five-puce.vercel.app/",
-      code: "https://github.com/ayus-10/project-x",
     },
   },
 ];
