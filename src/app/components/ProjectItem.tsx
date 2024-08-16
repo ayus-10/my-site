@@ -30,6 +30,7 @@ export default function ProjectItem(props: ProjectItemProps) {
             src={imageSrc}
             fill
             priority
+            quality={100}
             sizes="(min-width: 768px) 640px, (min-width: 640px) 320px, 256px"
             className="absolute h-full w-full rounded-t-sm duration-300 ease-in-out hover:scale-110 md:rounded-b-sm"
           />

@@ -7,10 +7,10 @@ export default function About() {
     "HTML/CSS",
     "JavaScript",
     "TypeScript",
-    "React/Next JS",
+    "React",
     "Angular",
-    "Node/Nest JS",
-    "MongoDB",
+    "Node JS",
+    "GraphQL",
     "Python",
   ];
 
