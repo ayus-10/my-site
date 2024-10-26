@@ -1,19 +1,7 @@
 import Image from "next/image";
 import { ScrollVisibleAnimation } from "../Animations";
-import { FaCaretRight } from "react-icons/fa";
 
 export default function About() {
-  const languagesAndFrameworks = [
-    "HTML/CSS",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Angular",
-    "Node JS",
-    "GraphQL",
-    "Python",
-  ];
-
   return (
     <ScrollVisibleAnimation>
       <section
@@ -36,24 +24,11 @@ export default function About() {
             About me
           </h2>
           <p className="max-w-[750px]">
-            My web development journey began with HTML and CSS in 2021. Since
-            then, I&apos;ve leveled up my skills with JavaScript and front-end
-            frameworks, solidifying my foundation in front-end development. I
-            then moved to backend development with Node.js and MongoDB, building
-            cool full-stack projects along the way. Below is the list of
-            programming languages and frameworks I am proficient in:
+            I began my journey in web development back in 2021 with some HTML, CSS, and JavaScript,
+            tried backend development with PHP and MySQL before diving into modern JavaScript frameworks
+            like React and Node(and its frameworks). I also explored Flutter especially in android development.
+            Currently experimenting with ASP.NET for developing web APIs.
           </p>
-          <ul className="my-4 grid grid-cols-2">
-            {languagesAndFrameworks.map((item) => (
-              <li
-                key={item}
-                className="flex items-center rounded-sm duration-200 ease-in-out hover:bg-my-blue-light"
-              >
-                <FaCaretRight className="text-xl text-my-red" />
-                <span className="break-words">{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </ScrollVisibleAnimation>
