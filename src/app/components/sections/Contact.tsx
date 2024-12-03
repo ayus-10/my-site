@@ -8,7 +8,7 @@ export default function Contact() {
   const contactLinks = [
     {
       title: "LinkedIn",
-      url: "https://www.linkedin.com/in/aayush-upreti-a21945293/",
+      url: "https://www.linkedin.com/in/aayushupreti/",
       icon: <TiSocialLinkedin />,
     },
     {
